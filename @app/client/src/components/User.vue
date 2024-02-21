@@ -1,9 +1,11 @@
 <script setup lang="ts">
-import User from './components/User.vue';
+
 </script>
 
 <template>
-  <User />
+    <div>
+        <h1>User</h1>
+    </div>
 </template>
 
 <style scoped>

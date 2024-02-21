@@ -13,16 +13,9 @@ app.get('/api/healthCheck', async function () {
     return { status: 'ok' };
 });
 
-
 async function main() {
 
     const allSchemas = [...userSchemas, ...orgSchemas, ...userOrgSchemas];
-
-    // Log all schemas
-    //console.log('All Schemas:');
-    //for (const schema of allSchemas) {
-        //console.log(JSON.stringify(schema, null, 2));
-    //}
 
     for (const schema of allSchemas) {
         app.addSchema(schema);
