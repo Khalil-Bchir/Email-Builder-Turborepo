@@ -1,3 +1,4 @@
+import fastifyCors from '@fastify/cors';
 import fastify from 'fastify';
 
 import orgRoutes from "./modules/organization/org.route";
@@ -14,6 +15,8 @@ app.get('/api/healthCheck', async function () {
 });
 
 async function main() {
+
+    app.register(fastifyCors);
 
     const allSchemas = [...userSchemas, ...orgSchemas, ...userOrgSchemas];
 

@@ -1,8 +1,9 @@
 import { FastifyReply, FastifyRequest } from "fastify";
-import userOrgService from "./userOrg.service";
-import {InvitationAnswerInput, SendInvitationInput} from "./userOrg.schema";
-import userService from "../user/user.service";
+
 import orgService from "../organization/org.service";
+import userService from "../user/user.service";
+import {InvitationAnswerInput, SendInvitationInput} from "./userOrg.schema";
+import userOrgService from "./userOrg.service";
 
 const userOrgController = {
     sendInvitationHandler: async function (req: FastifyRequest<{ Body: SendInvitationInput }>, res: FastifyReply) {
