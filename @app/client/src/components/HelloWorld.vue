@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref } from 'vue';
+import { ref, defineProps } from 'vue';
 
 const props = defineProps({
   msg: {
@@ -12,21 +12,16 @@ const count = ref(0);
 </script>
 
 <template>
-  <h1>{{ props.msg }}</h1>
-
-  <div class="card">
-    <button
-      type="button"
-      class="bg-brand-main md:text-yellow-400"
-      @click="count++"
-    >
-      count is {{ count }}
-    </button>
+  <div class="flex items-center justify-center h-screen">
+    <div class="bg-white p-8 rounded text-center">
+      <h1 class="text-2xl font-bold mb-4">{{ props.msg }}</h1>
+      <button
+        type="button"
+        class="bg-slate-500 text-white px-4 py-2 rounded-md hover:bg-slate-700"
+        @click="count++"
+      >
+        Increment Count ({{ count }})
+      </button>
+    </div>
   </div>
 </template>
-
-<style scoped>
-.read-the-docs {
-  color: #888;
-}
-</style>

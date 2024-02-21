@@ -1,22 +1,18 @@
 {
-    "name": "@demo/database",
-    "version": "0.0.0",
-    "scripts": {
-        "db:generate": "prisma generate",
-        "db:push": "prisma db push --skip-generate"
-    },
-    "dependencies": {
-        "@prisma/client": "5.9.1"
-    },
-    "devDependencies": {
-        "prisma": "5.9.1"
-    },
-    "pipeline": {
-        "db:generate": {
-            "cache": false
-        },
-        "db:push": {
-            "cache": false
-        }
-    }
+  "main": "./src/index.ts",
+  "types": "./src/index.ts",
+  "name": "@demo/database",
+  "version": "0.0.0",
+  "scripts": {
+    "db:generate": "prisma generate",
+    "db:push": "prisma db push --skip-generate",
+    "db:migrate:deploy": "prisma migrate deploy",
+    "db:migrate:dev": "prisma migrate dev"
+  },
+  "dependencies": {
+    "@prisma/client": "5.9.1"
+  },
+  "devDependencies": {
+    "prisma": "5.9.1"
+  }
 }

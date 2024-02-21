@@ -3,10 +3,7 @@ import HelloWorld from './components/HelloWorld.vue';
 </script>
 
 <template>
-  <HelloWorld msg="Vite + Vue + K8S" />
-  <div class="mt-12 flex flex-col px-12">
-    <h2 class="mb-4 text-xl">Custom Components From UI Library:</h2>
-  </div>
+  <HelloWorld msg="Vite + Vue" />
 </template>
 
 <style scoped>

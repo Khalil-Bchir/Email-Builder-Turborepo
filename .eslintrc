@@ -7,7 +7,7 @@
   "extends": ["eslint:recommended", "plugin:import/recommended", "prettier"],
   "overrides": [
     {
-      "files": "*.vue",
+      "files": ["*.vue"],
       "parser": "vue-eslint-parser",
       "extends": [
         "plugin:vue/vue3-recommended",
@@ -19,6 +19,22 @@
       "rules": {
         // FIXME: Causes problems with imports from Vue
         "import/named": "off"
+      }
+    },
+    {
+      "files": ["*.ts", "*.tsx"],
+      "extends": [
+        "plugin:@typescript-eslint/recommended",
+        "plugin:import/typescript",
+        "prettier"
+      ],
+      "plugins": ["@typescript-eslint", "simple-import-sort"],
+      "rules": {
+        "simple-import-sort/imports": "error",
+        "simple-import-sort/exports": "error",
+        "import/first": "error",
+        "import/newline-after-import": "error",
+        "import/no-duplicates": "error"
       }
     }
   ],
