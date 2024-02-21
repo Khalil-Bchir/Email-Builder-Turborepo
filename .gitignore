@@ -29,3 +29,6 @@ dist-ssr
 build/**
 dist/**
 .next/**
+
+# idea IDE
+.idea
