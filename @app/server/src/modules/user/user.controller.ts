@@ -1,6 +1,7 @@
 import { FastifyReply, FastifyRequest } from "fastify";
+
+import { CreateUserInput, updatedUserResponseSchema,UpdateUserInput } from "./user.schema";
 import userService from "./user.service";
-import { CreateUserInput, UpdateUserInput, updatedUserResponseSchema } from "./user.schema";
 
 const userController = {
     registerHandler: async function (req: FastifyRequest<{ Body: CreateUserInput; }>, res: FastifyReply) {

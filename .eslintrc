@@ -7,6 +7,18 @@
   "extends": ["eslint:recommended", "plugin:import/recommended", "prettier"],
   "overrides": [
     {
+      "files": ["**/*"],
+      "extends": ["eslint:recommended", "plugin:import/recommended", "prettier"],
+      "plugins": ["@typescript-eslint", "simple-import-sort"],
+      "rules": {
+        "simple-import-sort/imports": "error",
+        "simple-import-sort/exports": "error",
+        "import/first": "error",
+        "import/newline-after-import": "error",
+        "import/no-duplicates": "error"
+      }
+    },
+    {
       "files": ["*.vue"],
       "parser": "vue-eslint-parser",
       "extends": [

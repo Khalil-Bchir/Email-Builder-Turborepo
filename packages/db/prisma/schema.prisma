@@ -17,12 +17,18 @@ model User {
   salt          String
   email         String             @unique
   organizations UserOrganization[]
+  templates EmailTemplate[]
+  media     Media[]
+  campaigns Campaign[]
 }
 
 model Organization {
   organizationId Int                @id @default(autoincrement())
   name           String             @unique
   users          UserOrganization[]
+  templates       EmailTemplate[]
+  media           Media[]
+  campaigns       Campaign[]
 }
 
 model UserOrganization {
@@ -49,4 +55,61 @@ model UserRole {
   roleName  String
   userOrgId Int
   userOrg   UserOrganization @relation(fields: [userOrgId], references: [userOrgId])
+}
+
+model Contact {
+  contactId  Int       @id @default(autoincrement())
+  firstName  String
+  lastName   String
+  email      String    @unique
+  phone      String
+  createdAt  DateTime  @default(now())
+  updatedAt  DateTime?
+  recipients EmailRecipient[]
+}
+
+model Media {
+  mediaId         Int             @id @default(autoincrement())
+  filename        String
+  fileURL         String
+  userId          Int
+  organizationId  Int
+  user            User            @relation(fields: [userId], references: [userId])
+  organization    Organization    @relation(fields: [organizationId], references: [organizationId])
+}
+
+model EmailTemplate {
+  templateId      Int             @id @default(autoincrement())
+  subject         String
+  content         String
+  createdAt       DateTime        @default(now())
+  updatedAt       DateTime?
+  userId          Int
+  organizationId  Int
+  user            User            @relation(fields: [userId], references: [userId])
+  organization    Organization    @relation(fields: [organizationId], references: [organizationId])
+  campaigns       Campaign[]
+}
+
+model Campaign {
+  campaignId           Int             @id @default(autoincrement())
+  sentAt               DateTime?
+  status               String
+  userId               Int
+  organizationId       Int
+  templateId           Int
+  campaignName         String
+  campaignDescription  String
+  user                 User            @relation(fields: [userId], references: [userId])
+  organization         Organization    @relation(fields: [organizationId], references: [organizationId])
+  template             EmailTemplate   @relation(fields: [templateId], references: [templateId])
+  recipients           EmailRecipient[]
+}
+
+model EmailRecipient {
+  emailRecipientId  Int      @id @default(autoincrement())
+  campaignId        Int
+  contactId         Int
+  campaign          Campaign @relation(fields: [campaignId], references: [campaignId])
+  contact           Contact  @relation(fields: [contactId], references: [contactId])
 }
