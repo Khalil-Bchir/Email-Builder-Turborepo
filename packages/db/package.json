@@ -1,9 +1,10 @@
 {
-  "main": "./src/index.ts",
-  "types": "./src/index.ts",
+  "main": "./dist/index.js",
+  "types": "./dist/index.js",
   "name": "@demo/database",
   "version": "0.0.0",
   "scripts": {
+    "build": "tsc -b",
     "db:generate": "prisma generate",
     "db:push": "prisma db push --skip-generate",
     "db:migrate:deploy": "prisma migrate deploy",

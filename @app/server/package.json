@@ -6,7 +6,7 @@
   "scripts": {
     "build": "tsc -b",
     "start": "node src/app.ts",
-    "dev": "tsnd --respawn --transpile-only --exit-child src/app.ts"
+    "dev": "tsc-watch --onSuccess \"node ./dist/app.js\""
   },
   "dependencies": {
     "@demo/database": "workspace:*",
@@ -24,6 +24,7 @@
   "devDependencies": {
     "@types/bcrypt": "^5.0.2",
     "@types/node": "^20.11.19",
-    "ts-node-dev": "^2.0.0"
+    "ts-node-dev": "^2.0.0",
+    "tsc-watch": "^6.0.4"
   }
 }

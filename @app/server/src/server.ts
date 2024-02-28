@@ -1,8 +1,8 @@
+import cookie, { FastifyCookieOptions } from '@fastify/cookie';
+import fastifyCors from '@fastify/cors';
 import fjwt, { JWT } from "@fastify/jwt";
 import dotenv from 'dotenv';
 import Fastify, { FastifyReply, FastifyRequest } from "fastify";
-import fastifyCors from '@fastify/cors';
-import cookie, { FastifyCookieOptions } from '@fastify/cookie';
 
 import authRoutes from './modules/auth/auth.route';
 import { authSchemas } from './modules/auth/auth.schema';

@@ -1,8 +1,8 @@
 import axios from 'axios';
 
-import User from '../models/UserRepresentation'; // Adjust the path based on your project structure
+import User from '../models/UserRepresentation';
 
-const API_BASE_URL = 'http://localhost:3000/api';
+const API_BASE_URL = 'http://localhost:3001/api';
 
 export const UserApiService = {
     getAllUsers: async (): Promise<User[]> => {

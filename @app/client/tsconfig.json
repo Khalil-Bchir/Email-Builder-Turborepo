@@ -1,5 +1,5 @@
 {
-  "extends": "../../tsconfig.json",
+  "extends": "@demo/typescript-config/tsconfig.json",
   "compilerOptions": {
     "composite": true
   },

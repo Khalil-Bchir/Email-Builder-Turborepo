@@ -1,7 +1,7 @@
 
 import dotenv from 'dotenv';
 
-import buildServer  from './server';
+import buildServer from './server';
 
 
 dotenv.config();
@@ -12,7 +12,6 @@ async function main() {
 
     const options = {
         port: Number(process.env.PORT) || 3000,
-        host: '0.0.0.0',
     };
 
     try {
