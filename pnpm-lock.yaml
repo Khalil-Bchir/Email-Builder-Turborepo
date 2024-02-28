@@ -69,6 +69,9 @@ importers:
       '@demo/database':
         specifier: workspace:*
         version: link:../../packages/db
+      '@fastify/autoload':
+        specifier: ^5.8.0
+        version: 5.8.0
       '@fastify/cookie':
         specifier: ^9.3.1
         version: 9.3.1
@@ -432,6 +435,10 @@ packages:
       ajv: 8.12.0
       ajv-formats: 2.1.1(ajv@8.12.0)
       fast-uri: 2.3.0
+    dev: false
+
+  /@fastify/autoload@5.8.0:
+    resolution: {integrity: sha512-bF86vl+1Kk91S41WIL9NrKhcugGQg/cQ959aTaombkCjA+9YAbgVCKKu2lRqtMsosDZ0CNRfVnaLYoHQIDUI2A==}
     dev: false
 
   /@fastify/cookie@9.3.1:
